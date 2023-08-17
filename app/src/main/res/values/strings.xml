@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PokedeKs</string>
+    <string name="a11y_pokemon_img_descr">image of Pokémon</string>
+    <string name="pokemon_btn_random">Randomize!</string>
+</resources>
