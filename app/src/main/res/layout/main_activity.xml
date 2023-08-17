@@ -20,18 +20,6 @@
         tools:text="pickachu" />
 
 
-    <TextView
-        android:id="@+id/pokemonType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/pokemon_type"
-        android:textAllCaps="true"
-        android:textStyle="italic"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintEnd_toEndOf="@+id/pokemonImage"
-        app:layout_constraintStart_toStartOf="@+id/pokemonImage"
-        app:layout_constraintTop_toBottomOf="@id/pokemonImage" />
-
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
@@ -47,23 +35,21 @@
         android:id="@+id/pokemonImage"
         android:layout_width="96dp"
         android:layout_height="96dp"
-        tools:src="@drawable/ic_launcher_background"
         android:contentDescription="@string/a11y_pokemon_img_descr"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="@id/pokemonName"
         app:layout_constraintStart_toStartOf="@id/pokemonName"
         app:layout_constraintTop_toBottomOf="@id/pokemonName"
-        app:layout_constraintBottom_toTopOf="@id/pokemonType"
-        />
+        tools:src="@drawable/ic_launcher_background" />
 
     <Button
         android:id="@+id/randomPokemonBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:text="@string/pokemon_btn_random"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/pokemonType"
-        app:layout_constraintStart_toStartOf="@+id/pokemonType"
-        app:layout_constraintTop_toBottomOf="@+id/pokemonType" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pokemonImage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

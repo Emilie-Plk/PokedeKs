@@ -1,6 +1,6 @@
-package com.emplk.pokedeks.domain
+package com.emplk.pokedeks.ui
 
-data class PokemonEntity(
+data class PokemonViewState(
     val id: String,
     val name: String,
     val imageUrl: String,

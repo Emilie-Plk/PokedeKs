@@ -1,8 +1,7 @@
-package com.emplk.pokedeks.ui
+package com.emplk.pokedeks
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class MainApplication : Application() {
-}
+class MainApplication : Application()
