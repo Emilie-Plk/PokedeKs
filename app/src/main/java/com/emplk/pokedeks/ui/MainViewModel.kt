@@ -25,23 +25,18 @@ class MainViewModel @Inject constructor(
 
     private val randomStringIdMutableStateFlow = MutableStateFlow((1..898).random().toString())
 
-    @OptIn(ExperimentalCoroutinesApi::class)
-    val viewStateFlow: Flow<PokemonViewState> = randomStringIdMutableStateFlow.flatMapLatest { randomStringId ->
-        getRandomPokemonUseCase.invoke(randomStringId)
-            .map { pokemonEntity ->
-                PokemonViewState(
-                    id = pokemonEntity.id,
-                    name = pokemonEntity.name,
-                    imageUrl = pokemonEntity.imageUrl,
-                )
-            }
-    }
-
-    val viewStateLiveData: LiveData<PokemonViewState> = viewStateFlow.asLiveData(viewModelScope.coroutineContext)
-
+    val viewStateLiveData: LiveData<PokemonViewState> =
+        randomStringIdMutableStateFlow.flatMapLatest { randomStringId ->
+            getRandomPokemonUseCase.invoke(randomStringId)
+        }.map { pokemonEntity ->
+            PokemonViewState(
+                id = pokemonEntity.id,
+                name = pokemonEntity.name,
+                imageUrl = pokemonEntity.imageUrl,
+            )
+        }.asLiveData()
 
     fun onRandomizeButtonClicked() {
         randomStringIdMutableStateFlow.value = (1..898).random().toString()
     }
-
 }
